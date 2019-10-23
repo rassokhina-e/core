@@ -1,15 +1,13 @@
 {
-  "name": "ngx-translate-core",
+  "name": "@ngx-translate/core",
   "description": "The internationalization (i18n) library for Angular",
   "scripts": {
     "build": "ng build",
-    "prepare": "npm run build",
     "commit": "git-cz",
     "lint": "ng lint",
     "start": "ng serve",
     "test": "ng test"
   },
-  "version": "11.0.1",
   "dependencies": {
     "@angular/common": "^7.0.0",
     "@angular/compiler": "^7.0.0",
