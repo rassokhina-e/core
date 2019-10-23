@@ -35,6 +35,7 @@ declare const window: Window;
 
 @Injectable()
 export class TranslateService {
+  public _isActive: boolean = false;
   private loadingTranslations: Observable<any>;
   private pending: boolean = false;
   private _onTranslationChange: EventEmitter<TranslationChangeEvent> = new EventEmitter<TranslationChangeEvent>();
@@ -520,5 +521,12 @@ export class TranslateService {
     browserCultureLang = browserCultureLang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
 
     return browserCultureLang;
+  }
+
+  public triggerChange(): void {
+    this._isActive = true;
+    setTimeout(() => {
+        this._isActive = false;
+    },1000);
   }
 }

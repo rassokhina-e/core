@@ -54,7 +54,9 @@ export class TranslateDirective implements AfterViewChecked, OnDestroy {
   }
 
   ngAfterViewChecked() {
-    this.checkNodes();
+    if (this.translateService._isActive) {
+      this.checkNodes();
+    }
   }
 
   checkNodes(forceUpdate = false, translations?: any) {
