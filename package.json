@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "ng build",
+    "prepare": "npm run build",
     "commit": "git-cz",
     "lint": "ng lint",
     "start": "ng serve",
