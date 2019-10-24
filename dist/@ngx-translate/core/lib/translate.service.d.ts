@@ -28,6 +28,7 @@ export declare class TranslateService {
     private useDefaultLang;
     private isolate;
     _isActive: boolean;
+    _subTimer: any;
     private loadingTranslations;
     private pending;
     private _onTranslationChange;

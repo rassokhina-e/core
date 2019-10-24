@@ -36,6 +36,7 @@ declare const window: Window;
 @Injectable()
 export class TranslateService {
   public _isActive: boolean = false;
+  public _subTimer: any = null;
   private loadingTranslations: Observable<any>;
   private pending: boolean = false;
   private _onTranslationChange: EventEmitter<TranslationChangeEvent> = new EventEmitter<TranslationChangeEvent>();
@@ -524,8 +525,11 @@ export class TranslateService {
   }
 
   public triggerChange(): void {
+    if (this._subTimer) {
+      clearTimeout(this._subTimer);
+    }
     this._isActive = true;
-    setTimeout(() => {
+    this._subTimer = setTimeout(() => {
         this._isActive = false;
     },1000);
   }
